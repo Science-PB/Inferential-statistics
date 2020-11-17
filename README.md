@@ -45,8 +45,6 @@ a two-sample t-test.
 <img width="740" alt="Screen Shot 2020-11-16 at 8 27 21 PM" src="https://user-images.githubusercontent.com/66921930/99328951-1f6fa200-284b-11eb-8be5-df43e5243824.png">
 
 
-<img width="706" alt="Screen Shot 2020-11-16 at 8 31 57 PM" src="https://user-images.githubusercontent.com/66921930/99328954-20083880-284b-11eb-91d7-80f8af871edc.png">
-
 The results, as seen in Figure 1, provide the hypotheses used to run the test. In plain terms, the
 null hypothesis claims that there is no statistical difference between the mean weight of chicks who
 were on “Diet 1” versus “Diet 2”. The alternative hypothesis states that there is a difference in the
