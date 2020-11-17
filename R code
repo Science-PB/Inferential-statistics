@@ -1,0 +1,60 @@
+#Load Libraries
+library(MASS)
+library(plyr)
+library(FSAdata)
+
+#Two-sample t-test: Do chicks on diet 1 and diet 2 have the same weight ?
+headtail(ChickWeight)
+#H0: mu_1 = mu_2
+#Ha: mu_1 != mu_2
+
+#Separate dataset based on Diet and Time
+diet.one <- subset(ChickWeight, ChickWeight$Diet == 1)
+diet.two <- subset(ChickWeight, ChickWeight$Diet == 2)
+test <- subset(diet.one, diet.one$Time == 21)
+test2 <- subset(diet.two, diet.two$Time == 21)
+#Calculate the mean
+mean1 <- mean(test$weight)
+mean2 <- mean(test2$weight)
+#Conduct t.test
+t.test(test$weight, test2$weight, alternative="two.sided")
+
+
+#Test of equal or given proportions: Is the proportion of the
+#weight of the chicks in Diet 1 and Diet 2 the same?
+#H0: mu_1 = mu_2
+#Ha: mu_1 != mu_2
+
+#Load the ChickWeight dataset to chick
+chick <- ChickWeight
+#Separate dataset based on Diet and Time to compare and contrast them 
+foo <- subset(chick, Diet == "1")
+diet.one <- foo[1:119,]
+diet.two <- subset(chick, Diet == "2")
+#Find the max Time and min Time for each Chick in each Diet
+diet.one.0 <- subset(diet.one, Time == "0")
+diet.one.21 <- subset(diet.one, Time == "21")
+diet.one.0 <- diet.one.0[-8,]
+diet.one.difference <- diet.one.21$weight - diet.one.0$weight
+diet.one.truefalse <- sum(diet.one.difference > 100)
+diet.one.successrate <- sum(diet.one.truefalse) / length(diet.one.truefalse)
+diet.two.0 <- subset(diet.two, Time == "0")
+diet.two.0 <- diet.two.0[-8,]
+diet.two.21 <- subset(diet.two, Time == "21")
+diet.two.21 <- diet.two.21[-8,]
+diet.two.difference <- diet.two.21$weight - diet.two.0$weight
+diet.two.truefalse <- sum(diet.two.difference > 100)
+diet.two.successrate <- sum(diet.two.truefalse) / length(diet.two.truefalse)
+#Proportion: The diet allowed the chicks to grow more than 100g in weight by day 21.
+prop.test(x = c(diet.one.truefalse, diet.two.truefalse),
+          n = c(length(diet.one.difference),length(diet.two.difference)),
+          alternative = "two.sided")
+
+#F-test: Test for the variance in weight of chicks in Diet 1 vs Diet 2
+#H0: s_1^2 = s_2^2
+#Ha: s_1^2 != s_2^2
+chicks.diet1 <- subset(chick, Diet == "1" & Time == "21")
+chicks.diet2 <- subset(chick, Diet == "2" & Time == "21")
+var.test(chicks.diet1$weight, chicks.diet2$weight,
+         alternative = "two.sided")
+
