@@ -42,6 +42,10 @@ Since the dataset in general is poised to understand if diet makes a difference 
 the two-sample t-test will be used to make a decision on if the weight of chicks varies between “Diet 1” and “Diet 2” at the 21 day mark. Figure 1 provides the R-code utilized along with the results of running
 a two-sample t-test.
 
+<img width="740" alt="Screen Shot 2020-11-16 at 8 27 21 PM" src="https://user-images.githubusercontent.com/66921930/99328951-1f6fa200-284b-11eb-8be5-df43e5243824.png">
+
+
+<img width="706" alt="Screen Shot 2020-11-16 at 8 31 57 PM" src="https://user-images.githubusercontent.com/66921930/99328954-20083880-284b-11eb-91d7-80f8af871edc.png">
 
 The results, as seen in Figure 1, provide the hypotheses used to run the test. In plain terms, the
 null hypothesis claims that there is no statistical difference between the mean weight of chicks who
@@ -64,6 +68,7 @@ calculation was made to record how much a chick had grown based on which diet it
 Successful, i.e. 100g or more, was recorded as “TRUE, with the remainder labeled “FALSE”. The R-code
 used to build out this condition can be found in Figure 2.
 
+<img width="728" alt="Screen Shot 2020-11-16 at 8 30 47 PM" src="https://user-images.githubusercontent.com/66921930/99328952-20083880-284b-11eb-94cb-992eea3e1470.png">
 
 Based on the condition being established, a proportion test could then be utilized to make an
 assessment. In this case, a null hypothesis was established that there is no statistical difference
@@ -71,7 +76,7 @@ between the proportion in weight of chicks on “Diet 1” versus “Diet 2”, 
 that there is a statistical difference between the proportions. Figure 3 shows the R-code and results
 from running this proportion test.
 
-
+<img width="744" alt="Screen Shot 2020-11-16 at 8 31 06 PM" src="https://user-images.githubusercontent.com/66921930/99328953-20083880-284b-11eb-9c20-01965d082cbc.png">
 
 The proportions from the samples of “Diet 1” and “Diet 2, resulted in 0.78 and 0.89
 respectively. A p-value of 1 was established against a 0.05 alpha, or significance. While a different test,
@@ -90,6 +95,7 @@ variance of “Diet 1” and “Diet 2” on chick weight at the 21-day mark. Th
 statistical difference between the proportions at those same markers. R-code and output can be seen
 in Figure 4.
 
+<img width="706" alt="Screen Shot 2020-11-16 at 8 31 57 PM" src="https://user-images.githubusercontent.com/66921930/99328954-20083880-284b-11eb-91d7-80f8af871edc.png">
 
 The output of running an f-test on this dataset resulted in another larger p-value, 0.31, from our
 significance level of 0.05. Basing a decision on the p-value the determination would be to accept the
